@@ -499,11 +499,6 @@
               <FilePath>..\util\Scanner.hpp</FilePath>
             </File>
             <File>
-              <FileName>TimerTask.hpp</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\util\TimerTask.hpp</FilePath>
-            </File>
-            <File>
               <FileName>TimerScheduler.hpp</FileName>
               <FileType>5</FileType>
               <FilePath>..\util\TimerScheduler.hpp</FilePath>
@@ -512,6 +507,11 @@
               <FileName>util.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\util\util.h</FilePath>
+            </File>
+            <File>
+              <FileName>BlockPool.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\util\BlockPool.hpp</FilePath>
             </File>
           </Files>
         </Group>
