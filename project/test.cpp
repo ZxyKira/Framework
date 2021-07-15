@@ -5,10 +5,6 @@ using namespace framework::util::TimerScheduler;
 
 
 void foo(){
-	Timer timer = Timer();
-	
-	TimerScheduler timerScheduler = TimerScheduler(&timer);
-	
-	
+
 }
 
