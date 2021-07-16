@@ -62,6 +62,7 @@ namespace framework{
 					if(!task->registor(this))
 						return false;
 					
+					return true;
 				}
 				
 		};

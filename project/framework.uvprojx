@@ -513,6 +513,11 @@
               <FileType>5</FileType>
               <FilePath>..\util\BlockPool.hpp</FilePath>
             </File>
+            <File>
+              <FileName>Pool.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\util\Pool.hpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
