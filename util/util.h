@@ -11,6 +11,8 @@
 #include "TimerScheduler.hpp"
 #include "Scanner.hpp"
 #include "Executor.hpp"
+#include "Pool.hpp"
+#include "BlockPool.hpp"
 
 
 

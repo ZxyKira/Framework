@@ -16,21 +16,95 @@
 
 namespace framework{
 	namespace hal{
-		namespace PinEdgeTrigger{
-			
-			class PinEdgeTrigger : public framework::hal::Base::Base{
-				public: virtual bool enableRise(void* attachment, void(*execute)(PinEdgeTrigger*, void*));
-				public: virtual bool enableFall(void* attachment, void(*execute)(PinEdgeTrigger*, void*));
-				public: virtual void disableRise(void);
-				public: virtual void disableFall(void);
-				public: virtual void disableAll(void);
-			};
-				
-		}
+		class PinEdgeTrigger;
 	}
 }
 
+class framework::hal::PinEdgeTrigger : public framework::hal::Base{
+  /* **************************************************************************************
+   *  Variable <Public>
+   */
 
+  /* **************************************************************************************
+   *  Variable <Protected>
+   */
+
+  /* **************************************************************************************
+   *  Variable <Private>
+   */
+
+  /* **************************************************************************************
+   *  Abstract method <Public>
+   */
+  public: virtual bool enableRise(void* attachment, void(*execute)(PinEdgeTrigger*, void*)){
+		return false;
+	}
+	
+  public: virtual bool enableFall(void* attachment, void(*execute)(PinEdgeTrigger*, void*)){
+		return false;
+	}
+	
+  public: virtual void disableRise(void){
+		return;
+	}
+	
+  public: virtual void disableFall(void){
+		return;
+	}
+	
+  public: virtual void disableAll(void){
+		return;
+	}
+  /* **************************************************************************************
+   *  Abstract method <Protected>
+   */
+
+  /* **************************************************************************************
+   *  Construct Method
+   */
+	public: PinEdgeTrigger(void) : framework::hal::Base(){
+		return;
+	}
+	
+	public: ~PinEdgeTrigger(){
+		return;
+	}
+  /* **************************************************************************************
+   *  Public Method <Static>
+   */
+
+  /* **************************************************************************************
+   *  Public Method <Override>
+   */
+
+  /* **************************************************************************************
+   *  Public Method
+   */
+
+  /* **************************************************************************************
+   *  Protected Method <Static>
+   */
+
+  /* **************************************************************************************
+   *  Protected Method <Override>
+   */
+
+  /* **************************************************************************************
+   *  Protected Method
+   */
+
+  /* **************************************************************************************
+   *  Private Method <Static>
+   */
+
+  /* **************************************************************************************
+   *  Private Method <Override>
+   */
+   
+  /* **************************************************************************************
+   *  Private Method
+   */	
+};
 
 #endif //framework_hal_PinEdgeTrigger_hpp_
 /* *****************************************************************************************

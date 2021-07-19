@@ -15,6 +15,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#include "../lang/Object.hpp"
+
 /* *****************************************************************************************
  *    Macro
  */ 
@@ -29,30 +31,87 @@
 
 namespace framework{
 	namespace hal{
-		namespace AnalogDigitalConverterChannel{
-			
-			
-			class AnalogDigitalConverterChannel{
-				public: virtual bool enable(void);
-				public: virtual bool disable(void);
-				public: virtual bool read(void);
-			};	
-			
-			
-		}
+		class AnalogDigitalConverterChannel;
 	}
 }
 
+class framework::hal::AnalogDigitalConverterChannel : public framework::lang::Object{
+  /* **************************************************************************************
+   *  Variable <Public>
+   */
 
-/* *****************************************************************************************
- *    Typedef Struct/Union/Enum
- */ 
+  /* **************************************************************************************
+   *  Variable <Protected>
+   */
 
+  /* **************************************************************************************
+   *  Variable <Private>
+   */
 
-/* *****************************************************************************************
- *    Inline Function
- */ 
+  /* **************************************************************************************
+   *  Abstract method <Public>
+   */
+  public: virtual bool enable(void){
+		return false;
+	}
+	
+  public: virtual bool disable(void){
+		return false;
+	}
+	
+  public: virtual uint32_t read(void){
+		return 0;
+	}
+  /* **************************************************************************************
+   *  Abstract method <Protected>
+   */
 
+  /* **************************************************************************************
+   *  Construct Method
+   */
+	public: AnalogDigitalConverterChannel(void) : framework::lang::Object(){
+		return;
+	}
+	
+	public: ~AnalogDigitalConverterChannel(void){
+		return;
+	}
+  /* **************************************************************************************
+   *  Public Method <Static>
+   */
+
+  /* **************************************************************************************
+   *  Public Method <Override>
+   */
+
+  /* **************************************************************************************
+   *  Public Method
+   */
+
+  /* **************************************************************************************
+   *  Protected Method <Static>
+   */
+
+  /* **************************************************************************************
+   *  Protected Method <Override>
+   */
+
+  /* **************************************************************************************
+   *  Protected Method
+   */
+
+  /* **************************************************************************************
+   *  Private Method <Static>
+   */
+
+  /* **************************************************************************************
+   *  Private Method <Override>
+   */
+   
+  /* **************************************************************************************
+   *  Private Method
+   */	
+};	
 
 #endif //framework_hal_AnalogDigitalConverterChannel_hpp_
 /* *****************************************************************************************

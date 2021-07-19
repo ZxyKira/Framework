@@ -10,16 +10,20 @@
 
 namespace framework{
 	namespace lang{
-		namespace Object{
-			
-			class Object{
-				
-				
-			};
-			
-		}
+		class Object;
 	}
 }
+
+
+class framework::lang::Object{
+	public: Object(void){
+		
+	}
+
+	public: ~Object(void){
+		
+	}
+};
 
  
  
