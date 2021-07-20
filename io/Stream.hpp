@@ -1,25 +1,29 @@
 /* *****************************************************************************************
- *    File Name   :OutputStream.h
- *    Create Date :2021-03-16
- *    Modufy Date :2021-07-14
+ *    File Name   :Stream.h
+ *    Create Date :2021-07-20
+ *    Modufy Date :
  *    Information :
  */
  
-#ifndef framework_io_OutputStream_hpp_
-#define framework_io_OutputStream_hpp_
+#ifndef framework_io_Stream_hpp_
+#define framework_io_Stream_hpp_
 
 #include <stdbool.h>
 #include <stdint.h>
 
-#include "../lang/Object.hpp"
+#include "InputStream.hpp"
+#include "OutputStream.hpp"
+
+
 
 namespace framework{
-	namespace io{
-		class OutputStream;
-	}
+  namespace io{
+    class Stream;
+  }
 }
 
-class framework::io::OutputStream : public framework::lang::Object{
+class framework::io::Stream : public framework::io::OutputStream, 
+                                     framework::io::InputStream{
   /* **************************************************************************************
    *  Variable <Public>
    */
@@ -35,28 +39,15 @@ class framework::io::OutputStream : public framework::lang::Object{
   /* **************************************************************************************
    *  Abstract method <Public>
    */
+  public: virtual bool isOpen(){
+		return false;
+	}
 	
-	/**
-	 *
-	 */
-  public: virtual void flush(void){
+  public: virtual void close(){
 		return;
 	}
-	
-	/**
-	 *  write blocking
-	 */
-  public: virtual bool write(void* data, int length){
-		return false;
-	}
-	
-	/**
-	 *  write nonBlocking
-	 */
-  public: virtual bool write(void* data, int lengthl, void* attachment, void(*execute)(OutputStream*, void*)){
-		return false;
-	}
-	
+																			 
+																			 
   /* **************************************************************************************
    *  Abstract method <Protected>
    */
@@ -64,13 +55,15 @@ class framework::io::OutputStream : public framework::lang::Object{
   /* **************************************************************************************
    *  Construct Method
    */
-	public: OutputStream(void) : framework::lang::Object(){
-		return;
-	}
-	
-	public: ~OutputStream(){
-		return;
-	}
+	public: Stream(void) : framework::io::OutputStream(), 
+                         framework::io::InputStream(){
+    
+    return;
+  }
+  
+  public: ~Stream(){
+    return;
+  }
   /* **************************************************************************************
    *  Public Method <Static>
    */
@@ -106,10 +99,10 @@ class framework::io::OutputStream : public framework::lang::Object{
   /* **************************************************************************************
    *  Private Method
    */
-		
+    
 };
 
-#endif //framework_io_OutputStream_hpp_
+#endif //framework_io_Stream_hpp_
 /* *****************************************************************************************
  *    End of file
  */ 

@@ -12,8 +12,7 @@
 #include "stdbool.h"
 
 #include "Base.hpp"
-#include "..\io\InputStream.hpp"
-#include "..\io\OutputStream.hpp"
+#include "..\io\Stream.hpp"
 
 
 namespace framework{
@@ -24,8 +23,7 @@ namespace framework{
 
 
 class framework::hal::SerialPort : public framework::hal::Base, 
-                                   public framework::io::InputStream, 
-                                   public framework::io::OutputStream{
+                                   public framework::io::Stream{
         
   /* **************************************************************************************
    *  Variable <Public>
@@ -62,10 +60,6 @@ class framework::hal::SerialPort : public framework::hal::Base,
 		return false;
 	}
 	
-  public: virtual void close(void){
-		return;
-	}
-	
   /* **************************************************************************************
    *  Abstract method <Protected>
    */
@@ -73,13 +67,14 @@ class framework::hal::SerialPort : public framework::hal::Base,
   /* **************************************************************************************
    *  Construct Method
    */
-  public: SerialPort(void) : framework::hal::Base(), framework::io::InputStream(), framework::io::OutputStream(){
+  public: SerialPort(void) : framework::hal::Base(), framework::io::Stream(){
 		return;
 	}
 	
 	public: ~SerialPort(){
 		return;
 	}
+	
   /* **************************************************************************************
    *  Public Method <Static>
    */

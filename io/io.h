@@ -10,6 +10,8 @@
 
 #include "InputStream.hpp"
 #include "OutputStream.hpp"
+#include "Stream.hpp"
+#include "Transfer.hpp"
 
 
 

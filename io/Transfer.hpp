@@ -1,12 +1,12 @@
 /* *****************************************************************************************
- *    File Name   :OutputStream.h
- *    Create Date :2021-03-16
- *    Modufy Date :2021-07-14
+ *    File Name   :Transfer.h
+ *    Create Date :2021-07-20
+ *    Modufy Date :
  *    Information :
  */
  
-#ifndef framework_io_OutputStream_hpp_
-#define framework_io_OutputStream_hpp_
+#ifndef framework_io_Transfer_hpp_
+#define framework_io_Transfer_hpp_
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -14,16 +14,24 @@
 #include "../lang/Object.hpp"
 
 namespace framework{
-	namespace io{
-		class OutputStream;
-	}
+  namespace io{
+    class Transfer;
+  }
 }
 
-class framework::io::OutputStream : public framework::lang::Object{
+class framework::io::Transfer : public framework::lang::Object{
+	public: struct Packet{
+		void* transfer;
+		void* receiver;
+		uint32_t length;
+		uint32_t dummy;
+	};
+	
+	
   /* **************************************************************************************
    *  Variable <Public>
    */
-
+	
   /* **************************************************************************************
    *  Variable <Protected>
    */
@@ -37,25 +45,18 @@ class framework::io::OutputStream : public framework::lang::Object{
    */
 	
 	/**
-	 *
+	 * Xfer
 	 */
-  public: virtual void flush(void){
-		return;
-	}
+	public: virtual bool xfer(Packet &packet, void* attachment, void (execute)(Transfer&, void*)){
+		return false;
+	}	
 	
 	/**
-	 *  write blocking
+	 * Xfer
 	 */
-  public: virtual bool write(void* data, int length){
-		return false;
-	}
-	
-	/**
-	 *  write nonBlocking
-	 */
-  public: virtual bool write(void* data, int lengthl, void* attachment, void(*execute)(OutputStream*, void*)){
-		return false;
-	}
+	public: virtual bool xfer(Packet &packet){
+
+	}	
 	
   /* **************************************************************************************
    *  Abstract method <Protected>
@@ -64,13 +65,14 @@ class framework::io::OutputStream : public framework::lang::Object{
   /* **************************************************************************************
    *  Construct Method
    */
-	public: OutputStream(void) : framework::lang::Object(){
-		return;
-	}
-	
-	public: ~OutputStream(){
-		return;
-	}
+	public: Transfer(void) : framework::lang::Object(){
+    
+    return;
+  }
+  
+  public: ~Transfer(){
+    return;
+  }
   /* **************************************************************************************
    *  Public Method <Static>
    */
@@ -82,7 +84,7 @@ class framework::io::OutputStream : public framework::lang::Object{
   /* **************************************************************************************
    *  Public Method
    */
-
+	
   /* **************************************************************************************
    *  Protected Method <Static>
    */
@@ -106,10 +108,10 @@ class framework::io::OutputStream : public framework::lang::Object{
   /* **************************************************************************************
    *  Private Method
    */
-		
+    
 };
 
-#endif //framework_io_OutputStream_hpp_
+#endif //framework_io_Transfer_hpp_
 /* *****************************************************************************************
  *    End of file
  */ 

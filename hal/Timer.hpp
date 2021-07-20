@@ -36,11 +36,11 @@ class framework::hal::Timer : public framework::hal::Base{
    *  Abstract method <Public>
    */
 	
-  public: bool startAtTick(uint32_t tick, void* attachment,  void(execute)(Timer*, void*)){
+  public: bool startAtTick(uint32_t tick, void* attachment,  void(execute)(Timer&, void*)){
 		return false;
 	}
 	
-  public: bool startAtTime(uint32_t ms, void* attachment, void(execute)(Timer*, void*)){
+  public: bool startAtTime(uint32_t us, void* attachment, void(execute)(Timer&, void*)){
 		return false;
 	}
 	
